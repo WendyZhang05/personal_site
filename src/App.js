@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router, Switch,
   Route,
 } from "react-router-dom";
 import Navbar from './components/Navbar';
@@ -10,28 +10,23 @@ import About from './contents/About';
 import Education from './contents/Education';
 import Skills from './contents/Skills';
 import Contact from './contents/Contact';
+import Blogs from './contents/Blogs';
+
 
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Navbar />
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/education">
-        <Education />
-      </Route>
-      <Route path="/skills">
-        <Skills />
-      </Route>
-      <Route path="/contact">
-        <Contact />
-      </Route>
-    </div>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/education" component={Education} />
+          <Route path="/skills" component={Skills} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/blogs" component={Blogs} />
+        </Switch>
+      </div>
     </Router>
     );
   }

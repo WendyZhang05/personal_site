@@ -14,7 +14,6 @@ class Navbar extends Component {
       document.getElementById(this.state.NavItemActive).classList.remove('active');
       }
       this.setState({'NavItemActive':x},()=>{
-        console.log(this.state.NavItemActive)
         document.getElementById(this.state.NavItemActive).classList.add('active');
       });
   };
@@ -27,6 +26,7 @@ class Navbar extends Component {
           <Navitem item="Education" tolink="/education" activec={this.activeitem}></Navitem>
           <Navitem item="Skills" tolink="/skills" activec={this.activeitem}></Navitem>
           <Navitem item="Contact" tolink="/contact" activec={this.activeitem}></Navitem>
+          <Navitem item="Blogs" tolink="/blogs" activec={this.activeitem}></Navitem>
         </ul>
       </nav>
     )
